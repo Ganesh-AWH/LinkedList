@@ -1,11 +1,11 @@
-class Node{
-    int data;
-    Node next;
-    Node(int data){
-        this.data = data;
-        next  = null;
-    }
-}
+// class Node{
+//     int data;
+//     Node next;
+//     Node(int data){
+//         this.data = data;
+//         next  = null;
+//     }
+// }
 public class LinkedList {
     private static Node convert2List(int []arr){
         Node head = new Node(arr[0]);
