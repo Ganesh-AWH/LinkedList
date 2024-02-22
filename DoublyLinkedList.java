@@ -10,9 +10,9 @@ class Node{
 }
 public class DoublyLinkedList {
     public static void main(String[] args) {
-        int []arr = new int[]{1,2,5};
+        int []arr = new int[]{1,2,5,6,7,89};
         Node head = convert2DoubleList(arr);
-        head = DeleteBegin(head);
+        head = DeleteEnd(head);
         printList(head);
     }
     private static Node convert2DoubleList(int []arr){
@@ -34,6 +34,18 @@ public class DoublyLinkedList {
         head.prev = null;
         prev.next = null;
         prev = null;
+        return head;
+    }
+    private static Node DeleteEnd(Node head){
+        if(head == null || head.next == null) return null;
+        Node temp = head;
+        while(temp.next.next!=null){
+            temp = temp.next;
+        }
+        Node delNode = temp.next;
+        temp.next = null;
+        delNode.prev = null;
+        delNode = null;
         return head;
     }
     private static void printList(Node head){
